@@ -1,4 +1,4 @@
 export enum DefaultHost {
-  Api = 'https://api.standardnotes.com',
+  Api = 'https://sn.sudo.mv',
   WebSocket = 'wss://sockets.standardnotes.com',
 }
