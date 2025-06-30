@@ -7,6 +7,14 @@ import PreferencesSegment from '../../../PreferencesComponents/PreferencesSegmen
 import { useApplication } from '@/Components/ApplicationProvider'
 import { ThirdPartyFeatureDescription } from '@standardnotes/snjs'
 
+const PRESET_PLUGINS = [
+  { label: 'CHOOSE Markdown Visual', url: 'https://standardnotes.github.io/plugins/cdn/dist/entries/com.sncommunity.markdown-visual.json' },
+  { label: 'CHOOSE Advanced Checklist', url: 'https://standardnotes.github.io/plugins/cdn/dist/entries/com.sncommunity.advanced-checklist.json' },
+  { label: 'CHOOSE Scratch Editor', url: 'https://scratch-editor.com/ext.json' },
+  { label: 'CHOOSE Excalidraw', url: 'https://nienow.github.io/sn-excalidraw/ext.json' },
+  { label: 'CHOOSE Mermaid', url: 'https://nienow.github.io/sn-mermaid/ext.json' },
+]
+
 type Props = {
   className?: string
 }
@@ -62,6 +70,16 @@ const InstallCustomPlugin: FunctionComponent<Props> = ({ className = '' }) => {
               label="Install"
               onClick={() => submitPluginUrl(customUrl)}
             />
+            <div className="mt-4 flex flex-col gap-2">
+              {PRESET_PLUGINS.map((plugin, index) => (
+                <Button
+                  key={index}
+                  className="min-w-20"
+                  label={plugin.label}
+                  onClick={() => setCustomUrl(plugin.url)}
+                />
+              ))}
+            </div>
           </PreferencesSegment>
         )}
         {confirmablePlugin && (
