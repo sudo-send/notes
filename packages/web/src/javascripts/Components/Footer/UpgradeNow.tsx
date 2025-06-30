@@ -33,7 +33,7 @@ const UpgradeNow = ({ application, featuresController, subscriptionContoller }: 
         className="rounded bg-info px-1.5 py-0.5 text-sm font-bold uppercase text-info-contrast hover:brightness-125 lg:text-xs"
         onClick={onClick}
       >
-        {!hasAccount ? 'Sign up to sync' : 'Unlock features'}
+        {!hasAccount ? 'Sign up to sync' : '*'}
       </button>
     </div>
   )
